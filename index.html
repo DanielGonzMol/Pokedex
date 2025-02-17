@@ -25,6 +25,7 @@
 
               <input
                 type="text"
+                id="input-busqueda"
                 class="input-busqueda"
                 placeholder="Búsqueda"
               />
@@ -47,20 +48,20 @@
             </div>
           </div>
           <div class="wrapper-filtros">
-            <p>Ordenar por:</p>
+            <p>Buscar por:</p>
             <div class="wrap-filtro">
               <div>
-                <input
-                  type="radio"
-                  id="numero"
-                  name="filtro"
-                  value="numero"
-                  checked
-                />
+                <input type="radio" id="numero" name="filtro" value="numero" />
                 <label for="numero">Número</label>
               </div>
               <div>
-                <input type="radio" id="nombre" name="filtro" value="nombre" />
+                <input
+                  type="radio"
+                  id="nombre"
+                  name="filtro"
+                  value="nombre"
+                  checked
+                />
                 <label for="numero">Nombre</label>
               </div>
             </div>
@@ -70,7 +71,7 @@
       <section class="lista-pokemon">
         <div class="container">
           <div class="wrapper-lista"></div>
-          <div id="mensaje-no-encontrado"></div>
+          <div id="mensaje-no-encontrado">Pokemons no encontrados</div>
         </div>
       </section>
     </main>
