@@ -5,7 +5,7 @@ const numberFilter = document.querySelector("#numero");
 const nameFilter = document.querySelector("#nombre");
 const notFoundMessage = document.querySelector("#mensaje-no-encontrado");
 let currentPage = 1;
-const resultsPerPage = 20;
+let resultsPerPage = 20;
 const maxVisiblePages = 3;
 
 let allPokemons = [];
@@ -125,7 +125,7 @@ inputBusqueda.addEventListener("keyup", handleSearch);
 function handleSearch() {
   const searchTerm = inputBusqueda.value.toLowerCase();
 
-  // Filter Pokémon based on search term
+
   filteredPokemons = allPokemons.filter((pokemon) => {
     const pokemonID = pokemon.url.split("/")[6];
     return (

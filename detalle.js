@@ -1,4 +1,5 @@
 let currentPokemonId = null;
+let grito = new Audio();
 
 document.addEventListener("DOMContentLoaded", () => {
   const MAX_POKEMONS = 1025; //CAMBIAR Nº MÁXIMO DE POKEMONS - 151 PARA LA PRIMERA GENERACIÓN
@@ -213,19 +214,19 @@ function displayPokemonDetails(pokemon) {
   sprite.alt = name;
 
   sprite.addEventListener("click", async () => {
-    var grito = new Audio(
+    grito = new Audio(
       `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`
     );
     grito.play();  
   });
 
   const statNameMapping = {
-    hp: "HP",
+    hp: "PS",
     attack: "ATK",
     defense: "DEF",
     "special-attack": "SATK",
     "special-defense": "SDEF",
-    speed: "SPD",
+    speed: "VEL",
   };
 
   stats.forEach(({ stat, base_stat }) => {

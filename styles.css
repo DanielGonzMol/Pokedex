@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 :root {
   /*Variables que acabo de aprender a usar:*/
-  /*TEMA CLARO*/
   --color-texto: #ffffff;
   --color-fondo: #000000;
   --color-primario: #e48692;
@@ -12,8 +11,8 @@
   --color-gris: #c0c0c0;
 
   --headline-font-size: 50px;
-  --body1-font-size: 14px;
-  --body2-font-size: 12px;
+  --body1-font-size: 25px;
+  --body2-font-size: 20px;
   --body3-font-size: 30px;
   --subtitle1-font-size: 14px;
   --subtitle2-font-size: 12px;
