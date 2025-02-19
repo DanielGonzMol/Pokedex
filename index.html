@@ -11,9 +11,11 @@
     <main class="main">
       <header class="cabecera-index">
         <div class="container">
-          <div class="wrapper-logo">
-            <img src="./assets/pokeball.svg" alt="pokeball" />
-            <h1>Pokédex</h1>
+          <div class="titulo">
+            <div class="wrapper-logo">
+              <img src="./assets/pokeball.svg" alt="pokeball" />
+              <h1>Pokédex</h1>
+            </div>
           </div>
           <div class="wrapper-busqueda">
             <div class="search-wrap">
@@ -37,35 +39,6 @@
               />
             </div>
           </div>
-          <div class="wrapper-orden">
-            <div class="wrap-oren">
-              <img
-                src="assets/sorting.svg"
-                alt="sorting"
-                class="icono-orden"
-                id="icono-orden"
-              />
-            </div>
-          </div>
-          <div class="wrapper-filtros">
-            <p>Buscar por:</p>
-            <div class="wrap-filtro">
-              <div>
-                <input type="radio" id="numero" name="filtro" value="numero" />
-                <label for="numero">Número</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  id="nombre"
-                  name="filtro"
-                  value="nombre"
-                  checked
-                />
-                <label for="numero">Nombre</label>
-              </div>
-            </div>
-          </div>
         </div>
       </header>
       <section class="lista-pokemon">
@@ -74,6 +47,7 @@
           <div id="mensaje-no-encontrado">Pokemons no encontrados</div>
         </div>
       </section>
+      <div id="paginationContainer"></div>
     </main>
   </body>
 </html>
