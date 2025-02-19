@@ -4,8 +4,9 @@ const inputBusqueda = document.querySelector("#input-busqueda");
 const numberFilter = document.querySelector("#numero");
 const nameFilter = document.querySelector("#nombre");
 const notFoundMessage = document.querySelector("#mensaje-no-encontrado");
+const pageSelector = document.querySelector("#cant-pagina");
 let currentPage = 1;
-let resultsPerPage = 20;
+let resultsPerPage = parseInt(pageSelector.value);
 const maxVisiblePages = 3;
 
 let allPokemons = [];
@@ -37,9 +38,11 @@ async function fetchPokemonDataBeforeRedirect(id) {
 
 function displayPokemons(pokemon) {
   wrapperLista.innerHTML = "";
+  resultsPerPage = parseInt(pageSelector.value);
 
   const startIndex = (currentPage - 1) * resultsPerPage;
   const endIndex = startIndex + resultsPerPage;
+
   const paginatedPokemons = pokemon.slice(startIndex, endIndex);
 
   paginatedPokemons.forEach((pokemon) => {
@@ -73,6 +76,7 @@ function displayPokemons(pokemon) {
 
 function updatePaginationControls(totalResults) {
   const totalPages = Math.ceil(totalResults / resultsPerPage);
+
   paginationContainer.innerHTML = "";
 
   if (totalPages <= 1) return;
@@ -121,10 +125,11 @@ function updatePaginationControls(totalResults) {
 }
 
 inputBusqueda.addEventListener("keyup", handleSearch);
+pageSelector.addEventListener("change", handleSearch);
 
 function handleSearch() {
+  resultsPerPage = pageSelector.value;
   const searchTerm = inputBusqueda.value.toLowerCase();
-
 
   filteredPokemons = allPokemons.filter((pokemon) => {
     const pokemonID = pokemon.url.split("/")[6];

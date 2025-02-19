@@ -1,5 +1,4 @@
 let currentPokemonId = null;
-let grito = new Audio();
 
 document.addEventListener("DOMContentLoaded", () => {
   const MAX_POKEMONS = 1025; //CAMBIAR Nº MÁXIMO DE POKEMONS - 151 PARA LA PRIMERA GENERACIÓN
@@ -13,8 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   currentPokemonId = id;
   loadPokemon(id);
 });
-
+const grito = new Audio();
 async function loadPokemon(id) {
+  grito.src = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`;
   try {
     const [pokemon, pokemonSpecies] = await Promise.all([
       fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) =>
@@ -214,9 +214,6 @@ function displayPokemonDetails(pokemon) {
   sprite.alt = name;
 
   sprite.addEventListener("click", async () => {
-    grito = new Audio(
-      `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`
-    );
     grito.play();
   });
 
