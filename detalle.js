@@ -217,7 +217,7 @@ function displayPokemonDetails(pokemon) {
     grito = new Audio(
       `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`
     );
-    grito.play();  
+    grito.play();
   });
 
   const statNameMapping = {

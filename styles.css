@@ -234,8 +234,7 @@ body {
 }
 
 .list-item .name-wrap {
-  padding: 4px;
-  color: var(--color-fondo);
+  color: var(--color-secundario);
 }
 
 .list-item .image-wrap {
